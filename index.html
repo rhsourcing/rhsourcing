@@ -1,0 +1,2184 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RH Sourcing – Česká firma zajišťující sourcing produktů a technologií z Asie. Kompletní proces od vyhledání dodavatele po doručení. Provize pouze 5 %.">
+    <title>RH Sourcing – Produkty a technologie z Asie pro české firmy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0B5FFF;
+            --secondary-teal: #00C2A8;
+            --dark-text: #0F1724;
+            --light-bg: #F8FAFC;
+            --accent-yellow: #FFB020;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-text);
+            background: var(--light-bg);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            padding: 8px 16px;
+            background: linear-gradient(135deg, rgba(11, 95, 255, 0.08), rgba(0, 194, 168, 0.08));
+            border-radius: 10px;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            padding: 2px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+        }
+
+        .logo-text {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-blue);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--dark-text);
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .mobile-menu-toggle:hover {
+            background: rgba(11, 95, 255, 0.1);
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%);
+            padding: 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute; 
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(11, 95, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 194, 168, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(255, 176, 32, 0.08) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero-content { 
+            color: white;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            padding: 8px 16px;
+            font-size: 14px; 
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 24px;
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        .badge-icon {
+            font-size: 16px;
+        }
+
+        .hero-title {
+            font-size: 56px;
+            line-height: 1.1;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideInUp 0.8s ease-out 0.2s both;
+        }
+
+        .title-highlight {
+            background: linear-gradient(135deg, #00C2A8, #0B5FFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 35px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            animation: slideInUp 0.8s ease-out 0.4s both;
+        }
+
+
+        .hero-trust {
+            margin-top: 30px;
+            text-align: center;
+            animation: slideInUp 0.8s ease-out 0.8s both;
+        }
+
+        .trust-text {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .trust-stats {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .trust-stat {
+            text-align: center;
+        }
+
+        .trust-number {
+            display: block;
+            font-size: 24px;
+            font-weight: 800;
+            color: #00C2A8;
+            margin-bottom: 4px;
+        }
+
+        .trust-label {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: slideInUp 0.8s ease-out 0.6s both;
+        }
+
+        .btn { 
+            padding: 16px 32px;
+            border-radius: 12px; 
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none; 
+            cursor: pointer; 
+            border: none; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary { 
+            background: linear-gradient(135deg, #0B5FFF 0%, #00C2A8 100%);
+            color: white;
+            box-shadow: 0 8px 32px rgba(11, 95, 255, 0.3);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(11, 95, 255, 0.4);
+        }
+
+        .btn-outline { 
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 60px;
+            height: 60px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 40px;
+            height: 40px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Provize Section */
+        .provize-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 80px 0;
+        }
+
+        .provize-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .provize-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #0B5FFF, #00C2A8);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px rgba(11, 95, 255, 0.3);
+        }
+
+        .provize-badge svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .provize-content h2 {
+            font-size: 42px;
+            color: var(--dark-text);
+            margin-bottom: 16px;
+        }
+
+        .provize-content p {
+            font-size: 18px;
+            color: #4A5568;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .provize-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+
+        .stat-label {
+            font-size: 16px;
+            color: #4A5568;
+            font-weight: 500;
+        }
+
+        .percent-symbol {
+            color: var(--secondary-teal);
+            font-size: 0.7em;
+            margin-left: 2px;
+        }
+
+        .provize-stats .stat:first-child .stat-number {
+            color: var(--primary-blue);
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        .provize-stats .stat:last-child .stat-number {
+            color: #e53e3e;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(11, 95, 255, 0.4);
+            }
+            50% { 
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(11, 95, 255, 0);
+            }
+        }
+
+        .provize-badge {
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        .provize-content h2 {
+            animation: slideInUp 0.8s ease-out 0.2s both;
+        }
+
+        .provize-content p {
+            animation: slideInUp 0.8s ease-out 0.4s both;
+        }
+
+        .provize-stats {
+            animation: slideInUp 0.8s ease-out 0.6s both;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 50px;
+            color: var(--dark-text);
+        }
+
+        /* Features */
+        .features {
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .feature-card {
+            padding: 40px;
+            background: var(--light-bg);
+            border-radius: 16px;
+            transition: all 0.4s;
+            opacity: 0;
+            transform: translateY(30px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: 0;
+        }
+
+        .feature-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .feature-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 24px 48px rgba(2, 6, 23, 0.16);
+        }
+
+        .feature-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon svg {
+            width: 30px;
+            height: 30px;
+            stroke: white;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--dark-text);
+        }
+
+        .feature-card p {
+            color: #4A5568;
+            line-height: 1.7;
+        }
+
+        /* Process Timeline */
+        .process {
+            background: var(--light-bg);
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 60px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-teal));
+            transition: width 2s ease-out;
+            z-index: 0;
+        }
+
+        .timeline.visible::before {
+            width: 80%;
+        }
+
+        .timeline-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 4px solid var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s;
+        }
+
+        .step-icon svg {
+            width: 35px;
+            height: 35px;
+            stroke: var(--primary-blue);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .timeline-step:hover .step-icon {
+            transform: scale(1.1);
+            box-shadow: 0 5px 20px rgba(11, 95, 255, 0.3);
+        }
+
+        .step-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .step-desc {
+            font-size: 14px;
+            color: #4A5568;
+            line-height: 1.5;
+        }
+
+        /* Why Us */
+        .why-us {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 50px 40px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .stat-number {
+            font-size: 64px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        .stat-desc {
+            font-size: 16px;
+            color: #4A5568;
+        }
+
+        /* References */
+        .references {
+            background: #ffffff;
+        }
+
+        .case-study {
+            background: var(--light-bg);
+            border-radius: 20px;
+            padding: 72px;
+            box-shadow: 0 24px 48px rgba(2, 6, 23, 0.08);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .case-study h3 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: var(--primary-blue);
+        }
+
+        .case-image {
+            width: 100%;
+            height: 400px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .case-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .case-details {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--accent-yellow);
+        }
+
+        .case-details p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #4A5568;
+            margin-bottom: 10px;
+        }
+
+        .case-details strong {
+            color: var(--primary-blue);
+        }
+
+        .case-study > p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #4A5568;
+            margin-bottom: 30px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -150px;
+            right: -150px;
+        }
+
+        .cta-section h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section .btn {
+            background: white;
+            color: var(--primary-blue);
+            font-size: 18px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Content Pages */
+        .content-page {
+            padding: 100px 0;
+            min-height: 60vh;
+            background: white;
+        }
+
+        .content-page h1 {
+            font-size: 48px;
+            margin-bottom: 40px;
+        }
+
+        .content-page p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #4A5568;
+        }
+
+        /* Contact Form */
+        .contact-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .contact-intro h2 {
+            font-size: 32px;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .contact-intro p {
+            font-size: 18px;
+            color: #4A5568;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #E2E8F0;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--secondary-teal);
+            box-shadow: 0 0 0 3px rgba(0, 194, 168, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-info {
+            background: var(--light-bg);
+            padding: 40px;
+            border-radius: 16px;
+            height: fit-content;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            margin-bottom: 25px;
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary-blue);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-item a {
+            color: var(--dark-text);
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 500px;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-content h3 {
+            font-size: 32px;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .modal-content p {
+            font-size: 18px;
+            color: #4A5568;
+            margin-bottom: 30px;
+        }
+
+        .modal-content .btn {
+            margin-top: 10px;
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(11, 95, 255, 0.3);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(11, 95, 255, 0.4);
+        }
+
+        .scroll-top svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+            stroke-width: 3;
+            fill: none;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(15, 23, 36, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 60px 0 20px;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .footer-slogan {
+            color: #A0AEC0;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .footer-company {
+            color: #A0AEC0;
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .footer-menu {
+            list-style: none;
+        }
+
+        .footer-menu li {
+            margin-bottom: 12px;
+        }
+
+        .footer-menu a {
+            color: #A0AEC0;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: inline-block;
+        }
+
+        .footer-menu a:hover {
+            color: var(--secondary-teal);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background: var(--secondary-teal);
+            transform: translateY(-3px);
+        }
+
+        .social-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #2D3748;
+            padding-top: 20px;
+            text-align: center;
+            color: #A0AEC0;
+        }
+
+        /* Reveal utility */
+        .reveal { 
+            opacity: 0; 
+            transform: translateY(30px); 
+            transition: all 0.6s ease; 
+        }
+        
+        .reveal.visible { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            /* Navigation */
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 15px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                display: none;
+                z-index: 1000;
+            }
+
+            .nav-menu li {
+                margin: 0;
+                border-bottom: 1px solid rgba(11, 95, 255, 0.1);
+            }
+
+            .nav-menu li:last-child {
+                border-bottom: none;
+            }
+
+            .nav-menu a {
+                display: block;
+                padding: 12px 0;
+                font-size: 14px;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .logo {
+                font-size: 16px;
+                padding: 5px 10px;
+                margin: 0;
+            }
+
+            .nav-container {
+                justify-content: space-between;
+                position: relative;
+            }
+
+            /* Hero Section */
+            .hero {
+                min-height: 70vh;
+                padding: 30px 0;
+            }
+
+            .hero-container {
+                padding: 25px 15px;
+                text-align: center;
+            }
+
+            .hero-badge {
+                font-size: 12px;
+                padding: 5px 12px;
+                margin-bottom: 15px;
+            }
+
+            .hero-title {
+                font-size: 28px;
+                line-height: 1.1;
+                margin-bottom: 12px;
+            }
+
+            .hero-subtitle {
+                font-size: 14px;
+                line-height: 1.4;
+                margin-bottom: 20px;
+                max-width: 100%;
+                padding: 0 5px;
+            }
+
+
+            .hero-trust {
+                margin-top: 20px;
+            }
+
+            .trust-text {
+                font-size: 12px;
+                margin-bottom: 12px;
+            }
+
+            .trust-stats {
+                gap: 25px;
+            }
+
+            .trust-number {
+                font-size: 18px;
+            }
+
+            .trust-label {
+                font-size: 10px;
+            }
+
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+
+
+            .floating-element:nth-child(1) {
+                width: 40px;
+                height: 40px;
+            }
+
+            .floating-element:nth-child(2) {
+                width: 30px;
+                height: 30px;
+            }
+
+            .floating-element:nth-child(3) {
+                width: 50px;
+                height: 50px;
+            }
+
+            /* Provize Section Mobile */
+            .provize-section {
+                padding: 60px 0;
+            }
+
+            .provize-content h2 {
+                font-size: 28px;
+                margin-bottom: 12px;
+            }
+
+            .provize-content p {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+
+            .provize-stats {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+
+
+            /* Sections */
+            section {
+                padding: 40px 0;
+            }
+
+            .section-title {
+                font-size: 24px;
+                margin-bottom: 25px;
+                padding: 0 15px;
+                line-height: 1.2;
+            }
+
+            /* Features */
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .feature-card {
+                padding: 25px 20px;
+            }
+
+            .feature-card h3 {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .feature-card p {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+
+            .feature-icon {
+                width: 45px;
+                height: 45px;
+            }
+
+            /* Process Timeline */
+            .timeline {
+                flex-direction: column;
+                gap: 20px;
+                margin-top: 30px;
+            }
+
+            .timeline::before {
+                display: none;
+            }
+
+            .timeline-step {
+                background: white;
+                padding: 18px;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            }
+
+            .step-icon {
+                width: 50px;
+                height: 50px;
+                border-width: 3px;
+            }
+
+            .step-icon svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .step-title {
+                font-size: 16px;
+            }
+
+            .step-desc {
+                font-size: 13px;
+            }
+
+            /* Stats */
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin-top: 30px;
+            }
+
+            .stat-card {
+                padding: 25px 20px;
+            }
+
+            .stat-number {
+                font-size: 40px;
+            }
+
+            .stat-desc {
+                font-size: 14px;
+            }
+
+            .stat-label {
+                font-size: 13px;
+            }
+
+            /* References */
+            .case-study {
+                padding: 25px 18px;
+                border-radius: 12px;
+            }
+
+            .case-study h3 {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+
+            .case-image {
+                height: 180px;
+                margin-bottom: 15px;
+            }
+
+            .case-details {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+
+            .case-details p {
+                font-size: 13px;
+                margin-bottom: 6px;
+            }
+
+            .case-study > p {
+                font-size: 14px;
+                line-height: 1.5;
+                margin-bottom: 15px;
+            }
+
+            /* About Section */
+            .content-page {
+                padding: 40px 0;
+            }
+
+            .content-page h1 {
+                font-size: 26px;
+                margin-bottom: 20px;
+                padding: 0 15px;
+            }
+
+            .content-page p {
+                font-size: 14px;
+                line-height: 1.5;
+                padding: 0 15px;
+                margin-bottom: 15px;
+            }
+
+            .content-page > .container > div[style*="grid"] {
+                display: block !important;
+            }
+
+            .content-page .reveal {
+                margin-top: 30px;
+            }
+
+            /* CTA Section */
+            .cta-section {
+                padding: 40px 15px;
+            }
+
+            .cta-section h2 {
+                font-size: 24px;
+                margin-bottom: 12px;
+                line-height: 1.2;
+            }
+
+            .cta-section p {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+
+            /* Contact */
+            .contact-intro h2 {
+                font-size: 22px;
+            }
+
+            .contact-intro p {
+                font-size: 14px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .form-group label {
+                font-size: 14px;
+            }
+
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .contact-info {
+                padding: 25px 20px;
+            }
+
+            .contact-info h3 {
+                font-size: 18px;
+            }
+
+            /* Footer */
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .footer-logo {
+                font-size: 20px;
+            }
+
+            .footer-slogan,
+            .footer-company {
+                font-size: 13px;
+            }
+
+            .footer-bottom {
+                font-size: 12px;
+            }
+
+            /* Modal */
+            .modal-content {
+                padding: 35px 25px;
+                margin: 0 20px;
+                max-width: calc(100% - 40px);
+            }
+
+            .modal-content h3 {
+                font-size: 26px;
+            }
+
+            .modal-content p {
+                font-size: 16px;
+            }
+
+            /* Scroll buttons */
+            .scroll-top {
+                width: 45px;
+                height: 45px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .scroll-top svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            /* WhatsApp button */
+            a[href*="wa.me"] {
+                bottom: 80px !important;
+                right: 20px !important;
+                width: 50px !important;
+                height: 50px !important;
+            }
+
+            a[href*="wa.me"] svg {
+                width: 24px !important;
+                height: 24px !important;
+            }
+
+            /* Container padding */
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-text">RH Sourcing</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Domů</a></li>
+                <li><a href="#about">O nás</a></li>
+                <li><a href="#process">Jak to funguje</a></li>
+                <li><a href="#references">Reference</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Otevřít menu">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M3 6h18M3 18h18"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-icon">🚀</span>
+                    Spolehlivý sourcing z Asie
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-highlight">Produkty a technologie</span>
+                    <br>z celého světa pro vaši firmu
+                </h1>
+                <p class="hero-subtitle">
+                    Najdeme, vyjednáme a zajistíme dovoz produktů a technologií z Asie. 
+                    <strong>Kompletní proces od vyhledání dodavatele po doručení.</strong>
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Nezávazně poptat</a>
+                    <a href="#process" class="btn btn-outline">Jak to funguje</a>
+                </div>
+
+                <div class="hero-trust">
+                    <div class="trust-text">Spolehlivost ověřena</div>
+                    <div class="trust-stats">
+                        <div class="trust-stat">
+                            <span class="trust-number">480K</span>
+                            <span class="trust-label">USD největší zakázka</span>
+                        </div>
+                        <div class="trust-stat">
+                            <span class="trust-number">100</span>
+                            <span class="trust-label">Zajištěná montáž</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Jak vám pomůžeme</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </div>
+                    <h3>Najdeme dodavatele</h3>
+                    <p>Prověříme výrobce v Asii, vyžádáme nabídky a doporučíme nejlepší možnosti pro vaše potřeby.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 7h-9"></path>
+                            <path d="M14 17H5"></path>
+                            <circle cx="17" cy="17" r="3"></circle>
+                            <circle cx="7" cy="7" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3>Vyjednáme podmínky</h3>
+                    <p>Zajistíme nejlepší ceny, kvalitu a dodací podmínky přímo s výrobci v Asii.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3>Kompletní dodání</h3>
+                    <p>Zajistíme, aby k vám objednané produkty dorazily včas a bez komplikací. Montáž i školení zajišťují přímo odborníci dodavatele.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process" id="process">
+        <div class="container">
+            <h2 class="section-title">Náš proces v 5 krocích</h2>
+            <div class="timeline">
+                <div class="timeline-step">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="step-title">Konzultace</div>
+                    <div class="step-desc">Řeknete nám, co potřebujete.</div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </div>
+                    <div class="step-title">Sourcing</div>
+                    <div class="step-desc">Najdeme vhodné dodavatele.</div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 7h-9"></path>
+                            <path d="M14 17H5"></path>
+                            <circle cx="17" cy="17" r="3"></circle>
+                            <circle cx="7" cy="7" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="step-title">Vyjednávání</div>
+                    <div class="step-desc">Dohodneme cenu, kvalitu a podmínky.</div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="1" y="3" width="15" height="13"></rect>
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                        </svg>
+                    </div>
+                    <div class="step-title">Logistika</div>
+                    <div class="step-desc">Zajistíme dopravu, pojištění, celní odbavení a veškerou dokumentaci.</div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <div class="step-title">Instalace</div>
+                    <div class="step-desc">Montáž, zaškolení, hotovo.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="why-us">
+        <div class="container">
+            <h2 class="section-title">Proč si vybrat RH Sourcing</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Provize</div>
+                    <div class="stat-number" data-target="5">0<span class="percent-symbol">%</span></div>
+                    <div class="stat-desc">Nejnižší na trhu</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Největší zakázka</div>
+                    <div class="stat-number" data-target="480000">0</div>
+                    <div class="stat-desc">USD hodnota dealu</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Záruka kvality</div>
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-desc">Zajištěná montáž a školení</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- References -->
+    <section class="references" id="references">
+        <div class="container">
+            <h2 class="section-title">Reference</h2>
+            <div class="case-study reveal">
+                <h3>Slezské kamenolomy a.s.</h3>
+                <div class="case-image">
+                    <a href="https://i.postimg.cc/wvgqrcQt/unnamed.jpg" target="_blank" rel="noopener">
+                        <img src="https://i.postimg.cc/wvgqrcQt/unnamed.jpg" alt="Výrobní linka pro Slezské kamenolomy">
+                    </a>
+                </div>
+                <div class="case-details">
+                    <p><strong>Klient:</strong> Slezské kamenolomy a.s.</p>
+                    <p><strong>Dodavatel:</strong> Quanzhou Dafon Technology Co., LTD</p>
+                    <p><strong>Hodnota zakázky:</strong> 480 000 USD</p>
+                </div>
+                <p>Zajistili jsme dodávku kompletní výrobní linky v hodnotě 480 000 USD. Našli jsme vhodného dodavatele, vyjednali výhodnou cenu a zajistili kompletní dodání technologie včetně logistiky a celního odbavení. Montáž i zaškolení obsluhy proběhly přímo pod vedením odborníků dodavatele. Ve srovnání s evropskou nabídkou byla výsledná cena několikanásobně nižší.</p>
+                <div style="display:flex;justify-content:center;margin-top:20px">
+                    <a href="#contact" class="btn btn-primary">Chci podobnou zakázku</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Provize Section -->
+    <section class="provize-section" id="provize">
+        <div class="container">
+            <div class="provize-content">
+                <h2>Nejnižší provize na trhu</h2>
+                <p>Zatímco konkurence si účtuje 15% provize, my si necháváme pouze 5%. Více peněz zůstává vám.</p>
+                <div class="provize-stats">
+                    <div class="stat">
+                        <div class="stat-number" data-target="5">0<span class="percent-symbol">%</span></div>
+                        <div class="stat-label">Naše provize</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" data-target="15">0<span class="percent-symbol">%</span></div>
+                        <div class="stat-label">Konkurence</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="content-page" id="about">
+        <div class="container">
+            <h1>O nás</h1>
+            <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center">
+                <div>
+                    <p>Jsme RH Sourcing. Pomáháme českým firmám získat produkty a technologie z Asie rychleji, levněji a bez rizika.</p>
+                    <p>Vy nám sdělíte, jaký produkt nebo technologii potřebujete – my zajistíme vše od vyhledání dodavatele, přes vyjednání ceny až po dopravu a doručení.</p>
+                    <p>Naše provize je pouze 5 %, nejnižší na trhu.</p>
+                </div>
+                <div class="reveal" style="background:linear-gradient(135deg,#f0f9ff,#ffffff);padding:28px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.06);display:grid;grid-template-columns:1fr 1fr;gap:16px;text-align:center">
+                    <div style="background:#fff;border-radius:12px;padding:18px">
+                        <div style="font-size:28px">🔎</div>
+                        <div style="font-weight:700;margin-top:6px">Sourcing</div>
+                    </div>
+                    <div style="background:#fff;border-radius:12px;padding:18px">
+                        <div style="font-size:28px">🤝</div>
+                        <div style="font-weight:700;margin-top:6px">Vyjednání</div>
+                    </div>
+                    <div style="background:#fff;border-radius:12px;padding:18px">
+                        <div style="font-size:28px">🚚</div>
+                        <div style="font-weight:700;margin-top:6px">Logistika</div>
+                    </div>
+                    <div style="background:#fff;border-radius:12px;padding:18px">
+                        <div style="font-size:28px">🧑‍🏫</div>
+                        <div style="font-weight:700;margin-top:6px">Montáž & školení</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container reveal">
+            <h2>Chcete ušetřit na technologiích a mít vše bez starostí?</h2>
+            <p>Zajímá vás, kolik byste ušetřili? Pošlete nám poptávku, ozveme se do 24 hodin.</p>
+            <a href="#contact" class="btn">Nezávazně poptat</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="content-page" id="contact">
+        <div class="container">
+            <div class="contact-intro">
+                <h2>Máte zájem?</h2>
+                <p>Zajímá vás, kolik byste ušetřili? Pošlete nám poptávku, ozveme se do 24 hodin.</p>
+            </div>
+            <div class="contact-grid">
+                <form id="contactForm">
+                    <input type="text" name="website" id="website" style="position:absolute;left:-9999px;opacity:0" tabindex="-1">
+                    <div class="form-group">
+                        <label for="company">Název firmy *</label>
+                        <input type="text" id="company" name="company" autocomplete="organization" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact_name">Kontaktní osoba *</label>
+                        <input type="text" id="contact_name" name="contact_name" autocomplete="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon *</label>
+                        <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product_type">Jaký typ produktu hledáte? *</label>
+                        <select id="product_type" name="product_type" required>
+                            <option value="">Vyberte...</option>
+                            <option value="stroj">Stroj / Strojní zařízení</option>
+                            <option value="linka">Výrobní linka</option>
+                            <option value="komponenty">Materiál / Komponenty</option>
+                            <option value="jine">Jiné</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Popis, co hledáte *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <div class="form-group" style="display:flex;gap:12px;align-items:flex-start;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:14px">
+                        <input type="checkbox" id="gdpr" name="gdpr" required style="margin-top:2px;accent-color:#00C2A8;width:18px;height:18px">
+                        <label for="gdpr" style="margin:0;color:#4A5568">Souhlasím se zpracováním údajů pro účely vyřízení poptávky.</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Odeslat poptávku</button>
+                </form>
+                <div class="contact-info">
+                    <h3>Kontaktujte nás</h3>
+                    <div class="contact-item">
+                        <strong>Email</strong>
+                        <a href="mailto:info@rhsourcing.cz">info@rhsourcing.cz</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Telefon & WhatsApp</strong>
+                        <a href="tel:+420724977462">+420 724 977 462</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Adresa</strong>
+                        Zlín, Česká republika
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">RH Sourcing</div>
+                    <div class="footer-slogan">Produkty a technologie z Asie pro české firmy – bezpečně, výhodně.</div>
+                    <div class="footer-company">RH Enterprise s.r.o. | IČO: 21120749</div>
+                    <div class="social-icons">
+                        <a class="social-icon" href="https://www.linkedin.com/company/rhsourcing" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24"><path fill="white" d="M20.45 20.45h-3.56v-5.55c0-1.33-.02-3.05-1.86-3.05-1.86 0-2.15 1.45-2.15 2.95v5.65H9.32V9h3.42v1.56h.05c.48-.9 1.64-1.86 3.37-1.86 3.61 0 4.28 2.38 4.28 5.47v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22 0H2A2 2 0 0 0 0 2v20a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul class="footer-menu">
+                        <li><a href="#about">O nás</a></li>
+                        <li><a href="#process">Jak to funguje</a></li>
+                        <li><a href="#references">Reference</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontakt</h4>
+                    <ul class="footer-menu">
+                        <li><a href="mailto:info@rhsourcing.cz">info@rhsourcing.cz</a></li>
+                        <li><a href="tel:+420724977462">+420 724 977 462</a></li>
+                        <li><a href="https://www.linkedin.com/company/rhsourcing" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div style="margin-bottom: 12px;">© 2025 RH Sourcing | info@rhsourcing.cz | +420 724 977 462</div>
+                <div style="font-size: 14px; color: #718096;">RH Enterprise s.r.o. | IČO: 21120749</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <h3>Děkujeme za váš zájem!</h3>
+            <p>Děkujeme! Vaše poptávka byla odeslána. Ozveme se do 24 hodin.</p>
+            <button class="btn btn-primary" onclick="closeModal()">Zavřít</button>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <svg viewBox="0 0 24 24">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/420724977462" target="_blank" rel="noopener" aria-label="WhatsApp" style="position:fixed;bottom:100px;right:30px;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;box-shadow:0 5px 20px rgba(0,0,0,0.2);z-index:1000;">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="#fff"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .17 5.33.17 11.9c0 2.1.55 4.16 1.6 5.98L0 24l6.3-1.63a11.77 11.77 0 0 0 5.76 1.49h.01c6.56 0 11.89-5.33 11.89-11.9 0-3.18-1.24-6.17-3.44-8.48zM12.07 21.4c-1.85 0-3.66-.5-5.25-1.45l-.38-.23-3.74.97.99-3.65-.25-.38A9.49 9.49 0 0 1 2.6 11.9c0-5.23 4.25-9.48 9.47-9.48 2.53 0 4.91.99 6.7 2.78a9.43 9.43 0 0 1 2.77 6.7c0 5.23-4.25 9.49-9.47 9.49zm5.47-7.12c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.74-1.65-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.38-.02-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.53.07-.8.38-.27.3-1.05 1.03-1.05 2.51 0 1.48 1.08 2.92 1.23 3.12.15.2 2.13 3.25 5.16 4.55.72.31 1.28.5 1.72.64.72.23 1.37.2 1.88.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+    </a>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe feature cards
+        document.querySelectorAll('.feature-card').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(card);
+        });
+
+        // Observe timeline
+        const timeline = document.querySelector('.timeline');
+        if (timeline) {
+            observer.observe(timeline);
+        }
+
+        // Reveal utility observe
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Counter animation
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+
+            const updateCounter = () => {
+                current += step;
+                if (current < target) {
+                    element.textContent = Math.floor(current).toLocaleString();
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target.toLocaleString();
+                }
+            };
+
+            updateCounter();
+        }
+
+        // Observe stat numbers
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-number').forEach(stat => {
+            statsObserver.observe(stat);
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const honey = document.getElementById('website');
+            const gdpr = document.getElementById('gdpr');
+            if (honey && honey.value) { return; }
+            if (gdpr && !gdpr.checked) { gdpr.focus(); return; }
+            document.getElementById('successModal').classList.add('active');
+            this.reset();
+        });
+
+        function closeModal() {
+            document.getElementById('successModal').classList.remove('active');
+        }
+
+        // Close modal on background click
+        document.getElementById('successModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Provize stats animation
+        const provizeStats = document.querySelectorAll('.provize-section .stat-number');
+        provizeStats.forEach((stat, index) => {
+            const target = parseInt(stat.getAttribute('data-target'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+
+            const updateCounter = () => {
+                current += step;
+                if (current < target) {
+                    stat.textContent = Math.floor(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    stat.textContent = target;
+                }
+            };
+
+            // Start animation when section is visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            updateCounter();
+                        }, index * 300);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            observer.observe(stat);
+        });
+
+        // Add fadeInUp animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (mobileMenuToggle && navMenu) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+                
+                // Update aria-label
+                const isOpen = navMenu.style.display === 'flex';
+                mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Zavřít menu' : 'Otevřít menu');
+                
+                // Update icon
+                const icon = mobileMenuToggle.querySelector('svg path');
+                if (icon) {
+                    if (isOpen) {
+                        icon.setAttribute('d', 'M18 6L6 18M6 6l12 12');
+                    } else {
+                        icon.setAttribute('d', 'M3 12h18M3 6h18M3 18h18');
+                    }
+                }
+            });
+
+            // Close menu when clicking on links
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.style.display = 'none';
+                    mobileMenuToggle.setAttribute('aria-label', 'Otevřít menu');
+                    const icon = mobileMenuToggle.querySelector('svg path');
+                    if (icon) {
+                        icon.setAttribute('d', 'M3 12h18M3 6h18M3 18h18');
+                    }
+                });
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    navMenu.style.display = '';
+                    mobileMenuToggle.setAttribute('aria-label', 'Otevřít menu');
+                    const icon = mobileMenuToggle.querySelector('svg path');
+                    if (icon) {
+                        icon.setAttribute('d', 'M3 12h18M3 6h18M3 18h18');
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
