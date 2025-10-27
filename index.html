@@ -3,11 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="RH Sourcing – Česká firma zajišťující sourcing produktů a technologií z Asie. Kompletní proces od vyhledání dodavatele po doručení. Provize pouze 5 %.">
-    <title>RH Sourcing – Produkty a technologie z Asie pro české firmy</title>
+    <!-- Primary SEO metadata -->
+    <meta name="description" content="RH Sourcing – experti na sourcing produktů a technologií z Asie i celého světa pro české firmy. Provize jen 5 %, nejnižší na trhu.">
+    <title>RH Sourcing – Sourcing z Asie a světa pro české firmy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="rhsourcing, rhsourcing.cz, rhsourcingcz, sourcing z Asie, sourcing z Asie a světa, produkty, technologie, dovoz, import, české firmy, dodavatelé">
+    <link rel="canonical" href="https://rhsourcing.cz">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="RH Sourcing – Sourcing z Asie a světa pro české firmy">
+    <meta property="og:description" content="RH Sourcing – experti na sourcing produktů a technologií z Asie i celého světa pro české firmy. Provize jen 5 %, nejnižší na trhu.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rhsourcing.cz/">
+    <meta property="og:image" content="hero-bg-alt.png">
+    <meta property="og:site_name" content="RH Sourcing">
+    <meta name="author" content="RH Sourcing">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RH Sourcing – Sourcing z Asie a světa pro české firmy">
+    <meta name="twitter:description" content="RH Sourcing – experti na sourcing produktů a technologií z Asie i celého světa pro české firmy. Provize jen 5 %, nejnižší na trhu.">
+    <meta name="twitter:site" content="@rhsourcing">
+    <meta name="twitter:image" content="hero-bg-alt.png">
     <style>
         * {
             margin: 0;
@@ -194,10 +213,8 @@
             line-height: 1.1;
             font-weight: 800;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #cbd5e1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            /* Use solid white text instead of gradient to avoid outline effect */
+            color: #ffffff;
             animation: slideInUp 0.8s ease-out 0.2s both;
         }
 
@@ -842,6 +859,53 @@
             line-height: 1.8;
             margin-bottom: 20px;
             color: #4A5568;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+        .about-section h2 {
+            font-size: 42px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .about-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            color: #4A5568;
+            text-align: center;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            justify-items: center;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .about-item {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .about-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+        .about-icon {
+            font-size: 36px;
+        }
+        .about-item h3 {
+            margin-top: 12px;
+            font-size: 20px;
         }
 
         /* Contact Form */
@@ -1591,10 +1655,6 @@
 
         <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="badge-icon">🚀</span>
-                    Spolehlivý sourcing z Asie
-                </div>
                 <h1 class="hero-title">
                     <span class="title-highlight">Produkty a technologie</span>
                     <br>z celého světa pro vaši firmu
@@ -1609,22 +1669,26 @@
                     <a href="#process" class="btn btn-outline">Jak to funguje</a>
                 </div>
 
-                <div class="hero-trust">
-                    <div class="trust-text">Spolehlivost ověřena</div>
-                    <div class="trust-stats">
-                        <div class="trust-stat">
-                            <span class="trust-number">480K</span>
-                            <span class="trust-label">USD největší zakázka</span>
-                        </div>
-                        <div class="trust-stat">
-                            <span class="trust-number">100</span>
-                            <span class="trust-label">Zajištěná montáž</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "RH Sourcing",
+      "alternateName": ["RH Sourcing","rhsourcing","rhsourcing.cz","rhsourcingcz"],
+      "url": "https://rhsourcing.cz",
+      "description": "RH Sourcing – experti na sourcing produktů a technologií z Asie i celého světa pro české firmy. Provize jen 5 %, nejnižší na trhu.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Zlín",
+        "addressCountry": "CZ"
+      }
+    }
+    </script>
 
 
     <!-- Features -->
@@ -1715,7 +1779,7 @@
                         </svg>
                     </div>
                     <div class="step-title">Logistika</div>
-                    <div class="step-desc">Zajistíme dopravu, pojištění, celní odbavení a veškerou dokumentaci.</div>
+                    <div class="step-desc">Zajistíme dopravu k přístavu, aby k&nbsp;vám produkty dorazily včas.</div>
                 </div>
                 <div class="timeline-step">
                     <div class="step-icon">
@@ -1737,17 +1801,17 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-label">Provize</div>
-                    <div class="stat-number" data-target="5">0<span class="percent-symbol">%</span></div>
+                    <div class="stat-number" data-target="5"><span class="number-value">0</span><span class="percent-symbol">%</span></div>
                     <div class="stat-desc">Nejnižší na trhu</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">Největší zakázka</div>
-                    <div class="stat-number" data-target="480000">0</div>
+                    <div class="stat-number" data-target="480000"><span class="number-value">0</span></div>
                     <div class="stat-desc">USD hodnota dealu</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">Záruka kvality</div>
-                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-number" data-target="100"><span class="number-value">0</span><span class="percent-symbol">%</span></div>
                     <div class="stat-desc">Zajištěná montáž a školení</div>
                 </div>
             </div>
@@ -1786,11 +1850,11 @@
                 <p>Zatímco konkurence si účtuje 15% provize, my si necháváme pouze 5%. Více peněz zůstává vám.</p>
                 <div class="provize-stats">
                     <div class="stat">
-                        <div class="stat-number" data-target="5">0<span class="percent-symbol">%</span></div>
+                        <div class="stat-number" data-target="5"><span class="number-value">0</span><span class="percent-symbol">%</span></div>
                         <div class="stat-label">Naše provize</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number" data-target="15">0<span class="percent-symbol">%</span></div>
+                        <div class="stat-number" data-target="15"><span class="number-value">0</span><span class="percent-symbol">%</span></div>
                         <div class="stat-label">Konkurence</div>
                     </div>
                 </div>
@@ -1799,32 +1863,26 @@
     </section>
 
     <!-- About Section -->
-    <section class="content-page" id="about">
-        <div class="container">
-            <h1>O nás</h1>
-            <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center">
-                <div>
-                    <p>Jsme RH Sourcing. Pomáháme českým firmám získat produkty a technologie z Asie rychleji, levněji a bez rizika.</p>
-                    <p>Vy nám sdělíte, jaký produkt nebo technologii potřebujete – my zajistíme vše od vyhledání dodavatele, přes vyjednání ceny až po dopravu a doručení.</p>
-                    <p>Naše provize je pouze 5 %, nejnižší na trhu.</p>
+    <section class="about-section" id="about">
+        <div class="container reveal">
+            <h2>O RH&nbsp;Sourcing</h2>
+            <p>Jsme RH&nbsp;Sourcing. Pomáháme českým firmám získat produkty a technologie z Asie rychleji, levněji a bez rizika. Vy nám sdělíte, jaký produkt nebo technologii potřebujete – my zajistíme vše od vyhledání dodavatele, přes vyjednání ceny až po dopravu a doručení. Naše provize je pouze 5&nbsp;%, nejnižší na trhu.</p>
+            <div class="about-grid">
+                <div class="about-item">
+                    <div class="about-icon">🔎</div>
+                    <h3>Sourcing</h3>
                 </div>
-                <div class="reveal" style="background:linear-gradient(135deg,#f0f9ff,#ffffff);padding:28px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.06);display:grid;grid-template-columns:1fr 1fr;gap:16px;text-align:center">
-                    <div style="background:#fff;border-radius:12px;padding:18px">
-                        <div style="font-size:28px">🔎</div>
-                        <div style="font-weight:700;margin-top:6px">Sourcing</div>
-                    </div>
-                    <div style="background:#fff;border-radius:12px;padding:18px">
-                        <div style="font-size:28px">🤝</div>
-                        <div style="font-weight:700;margin-top:6px">Vyjednání</div>
-                    </div>
-                    <div style="background:#fff;border-radius:12px;padding:18px">
-                        <div style="font-size:28px">🚚</div>
-                        <div style="font-weight:700;margin-top:6px">Logistika</div>
-                    </div>
-                    <div style="background:#fff;border-radius:12px;padding:18px">
-                        <div style="font-size:28px">🧑‍🏫</div>
-                        <div style="font-weight:700;margin-top:6px">Montáž & školení</div>
-                    </div>
+                <div class="about-item">
+                    <div class="about-icon">🤝</div>
+                    <h3>Vyjednání</h3>
+                </div>
+                <div class="about-item">
+                    <div class="about-icon">🚚</div>
+                    <h3>Logistika</h3>
+                </div>
+                <div class="about-item">
+                    <div class="about-icon">🧑‍🏫</div>
+                    <h3>Montáž &amp; školení</h3>
                 </div>
             </div>
         </div>
@@ -2015,17 +2073,17 @@
             const duration = 2000;
             const step = target / (duration / 16);
             let current = 0;
-
+            // Find the span that holds the numeric value (if present)
+            const numberEl = element.querySelector('.number-value') || element;
             const updateCounter = () => {
                 current += step;
                 if (current < target) {
-                    element.textContent = Math.floor(current).toLocaleString();
+                    numberEl.textContent = Math.floor(current).toLocaleString();
                     requestAnimationFrame(updateCounter);
                 } else {
-                    element.textContent = target.toLocaleString();
+                    numberEl.textContent = target.toLocaleString();
                 }
             };
-
             updateCounter();
         }
 
@@ -2072,14 +2130,16 @@
             const duration = 2000;
             const step = target / (duration / 16);
             let current = 0;
+            // Find the span that holds the numeric value (if present)
+            const numberEl = stat.querySelector('.number-value') || stat;
 
             const updateCounter = () => {
                 current += step;
                 if (current < target) {
-                    stat.textContent = Math.floor(current);
+                    numberEl.textContent = Math.floor(current);
                     requestAnimationFrame(updateCounter);
                 } else {
-                    stat.textContent = target;
+                    numberEl.textContent = target;
                 }
             };
 
